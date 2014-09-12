@@ -3,5 +3,6 @@
 
     <string name="app_name">DemoUI</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_new">NewActivity</string>
 
 </resources>

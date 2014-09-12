@@ -949,10 +949,12 @@ containing a value of this type.
         public static final int homeAsUp=0x7f040006;
         public static final int listMode=0x7f040002;
         public static final int normal=0x7f040001;
+        public static final int pass=0x7f040032;
         public static final int showCustom=0x7f040008;
         public static final int showHome=0x7f040005;
         public static final int showTitle=0x7f040007;
         public static final int tabMode=0x7f040003;
+        public static final int text=0x7f040033;
         public static final int useLogo=0x7f040004;
         public static final int wrap_content=0x7f040000;
     }
@@ -982,8 +984,9 @@ containing a value of this type.
         public static final int abs__search_view=0x7f030013;
         public static final int abs__simple_dropdown_hint=0x7f030014;
         public static final int activity_main=0x7f030015;
-        public static final int sherlock_spinner_dropdown_item=0x7f030016;
-        public static final int sherlock_spinner_item=0x7f030017;
+        public static final int activity_new=0x7f030016;
+        public static final int sherlock_spinner_dropdown_item=0x7f030017;
+        public static final int sherlock_spinner_item=0x7f030018;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
@@ -1027,6 +1030,7 @@ containing a value of this type.
         public static final int abs__shareactionprovider_share_with_application=0x7f090007;
         public static final int app_name=0x7f09000d;
         public static final int hello_world=0x7f09000e;
+        public static final int title_activity_new=0x7f09000f;
     }
     public static final class style {
         /** 
