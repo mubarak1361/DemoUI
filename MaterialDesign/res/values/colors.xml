@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="hashcolor">#673ab7</color>
+    <color name="mentioncolor">#00695c</color>
+    <color name="link">#0277bd</color>
+    <color name="teal"> #009688</color>
+</resources>
