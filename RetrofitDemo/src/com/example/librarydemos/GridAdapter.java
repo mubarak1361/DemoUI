@@ -11,15 +11,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.librarydemos.ListviewActivity.Movies;
+import com.example.librarydemos.imageloader.ImageLoader;
 import com.squareup.picasso.Picasso;
 
 public class GridAdapter extends BaseAdapter {
 	private LayoutInflater inflater;
 	private List<Movies> movieItems;
-
+	private ImageLoader imageLoader;
 	public GridAdapter(LayoutInflater inflater, List<Movies> movieItems) {
 		this.inflater = inflater;
 		this.movieItems = movieItems;
+		    imageLoader = new ImageLoader(inflater.getContext());
 	}
 
 	@Override
@@ -43,7 +45,8 @@ public class GridAdapter extends BaseAdapter {
 		}
 
 		holder.text.setText(getItem(position).title);
-		Picasso.with(holder.context).load(getItem(position).image).into(holder.image);
+		imageLoader.DisplayImage(getItem(position).image, holder.image);
+		/*Picasso.with(holder.context).load(getItem(position).image).into(holder.image);*/
 		return convertView;
 	}
 

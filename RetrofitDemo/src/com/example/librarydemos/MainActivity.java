@@ -29,6 +29,7 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
 		@GET("/weather")
 		public void getWeather(@Query("q") String cities,
 				Callback<WeatherData> callback);
+		
 	}
 
 	@Override
@@ -61,7 +62,6 @@ public class MainActivity extends Activity implements android.view.View.OnClickL
 		WindData wind;
 		List<Data> weather;
 	}
-
 	public static class Weather {
 		String humidity;
 		String temp;
