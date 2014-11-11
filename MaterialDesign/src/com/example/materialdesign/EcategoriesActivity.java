@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.widget.ListView;
 
 import com.example.materialdesign.adapter.EcategoriesAdapter;
+import com.example.materialdesign.asynctask.CreateECategoriesAsyncTask;
 import com.example.materialdesign.asynctask.EcategoriesAsyncTask;
 import com.example.materialdesign.asynctask.EcategoriesAsyncTask.ECategoriesTaskActivity;
 import com.example.materialdesign.asynctask.ExpensesAsyncTask;
@@ -32,6 +33,9 @@ private LayoutInflater inflater;
 		
 		EcategoriesAsyncTask ecategoriesAsyncTask = new EcategoriesAsyncTask(this);
 		ecategoriesAsyncTask.execute();
+		
+		CreateECategoriesAsyncTask createECategoriesAsyncTask = new CreateECategoriesAsyncTask();
+		createECategoriesAsyncTask.execute("EMI","e3e3e3");
 	}
 
 	@Override
@@ -41,6 +45,5 @@ private LayoutInflater inflater;
 		adapter =  new EcategoriesAdapter(inflater, categoriesArray);
 		list.setAdapter(adapter);
 	}
-
 	
 }

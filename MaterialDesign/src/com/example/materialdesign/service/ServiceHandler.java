@@ -48,6 +48,10 @@ public class ServiceHandler {
     public String makeServiceCall(String url, int method) {
         return this.makeServiceCall(url, method,3, null);
     }
+    
+    public String makeServiceCall(String url, int method,List<NameValuePair> params) {
+        return this.makeServiceCall(url, method,3, params);
+    }
  
 
     public String makeServiceCall(String url, int method,int type,
@@ -63,7 +67,7 @@ public class ServiceHandler {
                 HttpPost httpPost = new HttpPost(url);
                 // adding post params
                 if (params != null) {
-                    httpPost.setEntity(new UrlEncodedFormEntity(params));
+                    httpPost.setEntity(new UrlEncodedFormEntity(params, "utf-8"));
                 }
  
                 httpResponse = httpClient.execute(httpPost);

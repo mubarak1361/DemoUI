@@ -8,7 +8,6 @@ import org.json.JSONObject;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.util.Log;
 
 import com.example.materialdesign.model.Categories;
 import com.example.materialdesign.service.ServiceHandler;
@@ -63,9 +62,6 @@ public class EcategoriesAsyncTask extends
 			
 			e1.printStackTrace();
 		}
-
-		response = sh.makeServiceCall(BASE_URL + "users/logout.json", 1);
-		Log.d("Logout Response", response.toString());
 
 		return categoriesArray;
 	}
