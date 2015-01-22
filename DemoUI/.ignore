@@ -1,0 +1,41 @@
+package com.example.contactlist;
+
+import android.app.Activity;
+import android.content.ContentResolver;
+import android.database.Cursor;
+import android.os.Bundle;
+import android.provider.ContactsContract;
+import android.util.Log;
+
+public class MainActivity extends Activity {
+	
+	private ContentResolver contentResolver;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+
+		contentResolver = getContentResolver();
+		Cursor cursor = contentResolver.query(ContactsContract.Contacts.CONTENT_URI,
+				null, null, null, null);
+		if (cursor.getCount() > 0) {
+			while (cursor.moveToNext()) {
+				cursor.getString(
+						cursor.getColumnIndex(ContactsContract.Contacts._ID));
+				cursor.getString(
+						cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
+				if (Integer.parseInt(cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER))) > 0) {
+					Cursor phoneCur = contentResolver.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
+							null,
+							ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = ?", new String[] {cursor.getString(
+									cursor.getColumnIndex(ContactsContract.Contacts._ID)) }, null);
+					 while (phoneCur.moveToNext()){
+						 Log.d("Number", phoneCur.getString(phoneCur.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER)));
+					 }
+					 phoneCur.close();
+				}
+			}
+		}
+	}
+}
