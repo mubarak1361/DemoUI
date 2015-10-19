@@ -15,3 +15,16 @@ public class NewActivity extends Activity {
 		text.setText(StorageAccess.getInstance().getString());
 	}
 }
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:anim/linear_interpolator">
+    <scale
+        android:fromXScale="1.0"
+        android:toXScale="1.7"
+        android:fromYScale="1.0"
+        android:toYScale="1.7"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:duration="200"
+        android:repeatCount="1"
+        android:repeatMode="reverse" />
+</set>
